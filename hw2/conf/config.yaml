@@ -1,0 +1,6 @@
+learning_rate: 0.0001
+batch_size: 1
+epoches: 10000
+tolerance: 0.00001
+gd_strategy: "SGD"  # available: "SGD", "BGD", "MBGD"
+data_preprocess: "min_max"  # available: "none" "min_max", "standard"
