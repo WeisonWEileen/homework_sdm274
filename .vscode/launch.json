@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: debug",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scripts.gd_reg",
+            "cwd": "${workspaceFolder}/hw2",
+            "console": "integratedTerminal",
+            // "args": [
+            //     "--suite", "libero_spatial",
+            // ],
+            "justMyCode": false,
+            // "stopOnEntry": true,
+        }
+    ]
+}

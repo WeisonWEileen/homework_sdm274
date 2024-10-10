@@ -1,6 +1,16 @@
-learning_rate: 0.0001
-batch_size: 1
-epoches: 10000
+learning_rate: 0.01
+batch_size: 4
+epoches: 5000
 tolerance: 0.00001
-gd_strategy: "SGD"  # available: "SGD", "BGD", "MBGD"
-data_preprocess: "min_max"  # available: "none" "min_max", "standard"
+gd_strategy: "MBGD"  # available: "SGD", "BGD", "MBGD"
+# prepro_strategy: "none"  # available: "none" "min_max", "mean"
+prepro_strategy: "mean"  # available: "none" "min_max", "mean"
+wandb_on_off: true              # available: "on", "off"
+# prepro_strategy: "mean"  # available: "none" "min_max", "mean"
+
+
+wandb:
+#   看看这里 能不能使用进行修饰
+  project: "hw2"
+  dir: "./outputs"
+

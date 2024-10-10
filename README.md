@@ -7,7 +7,8 @@ pip install numpy hydra-core matplotlib omegaconf
 ```
 # 框架
 ### Finished
+- 使用 decorator 配置多种作业要求
 - hydra参数配置框架配置
 ### @ TODO 
-- wandb loss 可视化loss
+- wandb loss 可视化loss, 配置 gradient 和 loss 的可视化的接口
 
