@@ -5,7 +5,7 @@ tolerance: 0.00001
 gd_strategy: "MBGD"  # available: "SGD", "BGD", "MBGD"
 # prepro_strategy: "none"  # available: "none" "min_max", "mean"
 prepro_strategy: "mean"  # available: "none" "min_max", "mean"
-wandb_on_off: true              # available: "on", "off"
+wandb_on_off: true            # available: "on", "off"
 # prepro_strategy: "mean"  # available: "none" "min_max", "mean"
 
 

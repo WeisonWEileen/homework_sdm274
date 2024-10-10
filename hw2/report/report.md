@@ -3,7 +3,7 @@
 
 
 code: https://github.com/WeisonWEileen/homework_sdm274/tree/master/hw2
-you can change the param in yaml to reproduce all the metion metioned in the report.
+you can change the param in ```config.yaml``` to reproduce all the results metioned in the report.
 
 ---
 
@@ -42,7 +42,7 @@ __运行结果__:
 
 ![image-20241010225805688](./assets/image-20241010225805688.png)
 
-### Min-Max + MBGD （learning rate 在这里需要调大一点）
+### Min-Max normalization + MBGD （learning rate 在这里需要调大一点）
 
 参数配置：
 
@@ -54,12 +54,12 @@ __运行结果__:
 
 ![image-20241010230459491](./assets/image-20241010230459491.png)
 
-### mean + MBDG
+### mean normalization + MBDG
 
 参数配置：![image-20241010230744472](./assets/image-20241010230744472.png)
 
 结果分析：
 
-- loss： 稳定在 26左右，梯度逐渐下降，趋于0
+- loss： 稳定在 21.3左右，梯度逐渐下降，趋于0
 
-![image-20241010230807313](./assets/image-20241010230807313.png)
+![image-20241011012914224](./assets/image-20241011012914224.png)
