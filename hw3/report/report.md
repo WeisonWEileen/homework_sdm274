@@ -2,7 +2,7 @@
 ### 12211810 潘炜
 
 
-code: https://github.com/WeisonWEileen/homework_sdm274/tree/master/hw2
+code: https://github.com/WeisonWEileen/homework_sdm274/tree/master/hw3
 you can change the param in ```config.yaml``` to reproduce all the results metioned in the report.
 
 ---
