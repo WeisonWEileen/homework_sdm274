@@ -1,0 +1,19 @@
+{"time":"2024-10-15T00:50:22.164646627+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-15T00:50:22.164653265+08:00","level":"INFO","msg":"created symlink","path":"/home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_005022-igzl9o0m/logs/debug-core.log"}
+{"time":"2024-10-15T00:50:22.188371073+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-15T00:50:22.191263151+08:00","level":"INFO","msg":"created new stream","id":"igzl9o0m"}
+{"time":"2024-10-15T00:50:22.19127911+08:00","level":"INFO","msg":"stream: started","id":"igzl9o0m"}
+{"time":"2024-10-15T00:50:22.191289699+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:22.191305404+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:22.191334874+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:24.231797142+08:00","level":"INFO","msg":"stream: closing","id":"igzl9o0m"}
+{"time":"2024-10-15T00:50:24.232290143+08:00","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2024-10-15T00:50:24.232343527+08:00","level":"WARN","msg":"No requirements.txt found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job"}
+{"time":"2024-10-15T00:50:24.232353742+08:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-10-15T00:50:24.95549251+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2024-10-15T00:50:24.955541214+08:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404 Not Found: {\"errors\":[{\"message\":\"project /hw3 not found during createRunFiles\",\"path\":[\"createRunFiles\"]}],\"data\":{\"createRunFiles\":null}}"}
+{"time":"2024-10-15T00:50:24.95607365+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-15T00:50:24.956119459+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:24.956139091+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:24.956162098+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"igzl9o0m"}}
+{"time":"2024-10-15T00:50:24.956182037+08:00","level":"INFO","msg":"stream: closed","id":"igzl9o0m"}

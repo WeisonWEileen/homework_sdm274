@@ -1,0 +1,127 @@
+2024-10-15 01:41:24,478 INFO    StreamThr :211743 [internal.py:wandb_internal():90] W&B internal server running at pid: 211743, started at: 2024-10-15 01:41:24.478431
+2024-10-15 01:41:24,480 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: status
+2024-10-15 01:41:24,480 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: status
+2024-10-15 01:41:24,481 DEBUG   SenderThread:211743 [sender.py:send():302] send: header
+2024-10-15 01:41:24,481 INFO    WriterThread:211743 [datastore.py:open_for_write():75] open: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/run-rpe790rm.wandb
+2024-10-15 01:41:24,489 DEBUG   SenderThread:211743 [sender.py:send():302] send: run
+2024-10-15 01:41:26,945 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: check_version
+2024-10-15 01:41:26,947 INFO    SenderThread:211743 [dir_watcher.py:__init__():216] watching files in: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files
+2024-10-15 01:41:26,947 INFO    SenderThread:211743 [sender.py:_start_run_threads():913] run started: rpe790rm with start time 1728927684.476261
+2024-10-15 01:41:26,947 DEBUG   SenderThread:211743 [sender.py:send():302] send: summary
+2024-10-15 01:41:26,948 INFO    SenderThread:211743 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2024-10-15 01:41:26,948 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: check_version
+2024-10-15 01:41:27,948 INFO    Thread-12 :211743 [dir_watcher.py:_on_file_created():275] file/dir created: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/wandb-summary.json
+2024-10-15 01:41:29,278 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:29,571 DEBUG   SenderThread:211743 [sender.py:send():302] send: exit
+2024-10-15 01:41:29,572 INFO    SenderThread:211743 [sender.py:send_exit():438] handling exit code: 255
+2024-10-15 01:41:29,572 INFO    SenderThread:211743 [sender.py:send_exit():440] handling runtime: 0
+2024-10-15 01:41:29,572 INFO    SenderThread:211743 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2024-10-15 01:41:29,572 INFO    SenderThread:211743 [sender.py:send_exit():446] send defer
+2024-10-15 01:41:29,572 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:29,573 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,573 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 0
+2024-10-15 01:41:29,573 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,573 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 0
+2024-10-15 01:41:29,573 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 1
+2024-10-15 01:41:29,573 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,573 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 1
+2024-10-15 01:41:29,573 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,573 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 1
+2024-10-15 01:41:29,573 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 2
+2024-10-15 01:41:29,574 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,574 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 2
+2024-10-15 01:41:29,574 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 2
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 3
+2024-10-15 01:41:29,574 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,574 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 3
+2024-10-15 01:41:29,574 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 3
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 4
+2024-10-15 01:41:29,574 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,574 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 4
+2024-10-15 01:41:29,574 DEBUG   SenderThread:211743 [sender.py:send():302] send: summary
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2024-10-15 01:41:29,574 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 4
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 5
+2024-10-15 01:41:29,574 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,574 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 5
+2024-10-15 01:41:29,574 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 5
+2024-10-15 01:41:29,574 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 6
+2024-10-15 01:41:29,575 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,575 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 6
+2024-10-15 01:41:29,575 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,575 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 6
+2024-10-15 01:41:29,575 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 7
+2024-10-15 01:41:29,575 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,575 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 7
+2024-10-15 01:41:29,575 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,575 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 7
+2024-10-15 01:41:29,575 INFO    SenderThread:211743 [dir_watcher.py:finish():362] shutting down directory watcher
+2024-10-15 01:41:29,673 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:29,949 INFO    SenderThread:211743 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/wandb-summary.json
+2024-10-15 01:41:29,950 INFO    SenderThread:211743 [dir_watcher.py:finish():392] scan: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files
+2024-10-15 01:41:29,950 INFO    SenderThread:211743 [dir_watcher.py:finish():406] scan save: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/config.yaml config.yaml
+2024-10-15 01:41:29,950 INFO    SenderThread:211743 [dir_watcher.py:finish():406] scan save: /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/wandb-summary.json wandb-summary.json
+2024-10-15 01:41:29,950 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 8
+2024-10-15 01:41:29,950 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:29,950 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:29,955 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 8
+2024-10-15 01:41:29,955 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:29,955 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 8
+2024-10-15 01:41:29,955 INFO    SenderThread:211743 [file_pusher.py:finish():171] shutting down file pusher
+2024-10-15 01:41:30,053 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,053 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,154 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,155 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,256 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,256 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,357 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,357 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,458 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,458 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,559 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,559 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,660 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,661 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,762 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,762 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,863 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,863 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:30,965 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:30,965 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,066 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,066 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,168 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,168 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,269 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,269 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,370 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,370 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,471 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,472 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:31,572 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: poll_exit
+2024-10-15 01:41:31,573 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: poll_exit
+2024-10-15 01:41:32,003 INFO    Thread-16 :211743 [upload_job.py:push():138] Uploaded file /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/wandb-summary.json
+2024-10-15 01:41:32,004 INFO    Thread-15 :211743 [upload_job.py:push():138] Uploaded file /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_014124-rpe790rm/files/config.yaml
+2024-10-15 01:41:32,204 INFO    Thread-11 :211743 [sender.py:transition_state():459] send defer: 9
+2024-10-15 01:41:32,205 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:32,205 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 9
+2024-10-15 01:41:32,205 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:32,205 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 9
+2024-10-15 01:41:32,529 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 10
+2024-10-15 01:41:32,529 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:32,529 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 10
+2024-10-15 01:41:32,529 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:32,530 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 10
+2024-10-15 01:41:32,530 INFO    SenderThread:211743 [sender.py:transition_state():459] send defer: 11
+2024-10-15 01:41:32,530 DEBUG   HandlerThread:211743 [handler.py:handle_request():141] handle_request: defer
+2024-10-15 01:41:32,530 INFO    HandlerThread:211743 [handler.py:handle_request_defer():164] handle defer: 11
+2024-10-15 01:41:32,530 DEBUG   SenderThread:211743 [sender.py:send():302] send: final
+2024-10-15 01:41:32,530 DEBUG   SenderThread:211743 [sender.py:send():302] send: footer
+2024-10-15 01:41:32,530 DEBUG   SenderThread:211743 [sender.py:send_request():316] send_request: defer
+2024-10-15 01:41:32,530 INFO    SenderThread:211743 [sender.py:send_request_defer():455] handle sender defer: 11
+2024-10-15 01:41:32,576 INFO    MainThread:211743 [internal.py:handle_exit():80] Internal process exited
+2024-10-15 01:41:32,576 WARNING MsgRouterThr:211743 [router.py:message_loop():73] EOFError seen in message_loop

@@ -1,0 +1,46 @@
+wandb_version: 1
+
+_content:
+  desc: null
+  value:
+    dataset_path: ./data/wine.data
+    epoches: '9000'
+    lr: '0.01'
+    tol: 1e-05
+    wandb: '{''project'': ''hw3'', ''dir'': ''./outputs''}'
+    wandb_on_off: 'False'
+_flags_cache:
+  desc: null
+  value:
+    struct: true
+_metadata:
+  desc: null
+  value: 'ContainerMetadata(ref_type=typing.Any, object_type=<class ''dict''>, optional=True,
+    key=None, flags={''struct'': True}, flags_root=False, resolver_cache=defaultdict(<class
+    ''dict''>, {''now'': {(''%Y-%m-%d'',): ''2024-10-15'', (''%H-%M-%S'',): ''00-59-50''}}),
+    key_type=typing.Any, element_type=typing.Any)'
+_parent:
+  desc: null
+  value: null
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.1
+    framework: sklearn
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.8.19
+    start_time: 1728925193.279382
+    t:
+      1:
+      - 5
+      - 50
+      - 53
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.8.19
+      5: 0.13.1
+      8:
+      - 5

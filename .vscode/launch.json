@@ -5,14 +5,10 @@
             "name": "Python: debug",
             "type": "debugpy",
             "request": "launch",
-            "module": "scripts.gd_reg",
-            "cwd": "${workspaceFolder}/hw2",
+            "module": "scripts.train",
+            "cwd": "${workspaceFolder}/hw3",
             "console": "integratedTerminal",
-            // "args": [
-            //     "--suite", "libero_spatial",
-            // ],
             "justMyCode": false,
-            // "stopOnEntry": true,
         }
     ]
 }

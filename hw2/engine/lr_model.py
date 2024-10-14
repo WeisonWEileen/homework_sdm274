@@ -52,7 +52,6 @@ class LinearRegresssion:
         
         self.W = self.W - self.learning_rate * grad
 
-
     # batch gradient descent
     def _BGD_update(self, input, groundtruth):
         pred = input.dot(self.W)

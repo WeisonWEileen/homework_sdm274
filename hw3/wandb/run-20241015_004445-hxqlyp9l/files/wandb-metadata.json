@@ -1,0 +1,23 @@
+{
+    "os": "Linux-6.5.0-28-generic-x86_64-with-glibc2.17",
+    "python": "3.8.19",
+    "heartbeatAt": "2024-10-14T16:44:56.524788",
+    "startedAt": "2024-10-14T16:44:45.709374",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "-m scripts.train",
+    "git": {
+        "remote": "https://github.com/WeisonWEileen/homework_sdm274.git",
+        "commit": "572ec05b2e77425d7d91803123a48a862105ae95"
+    },
+    "email": "weisonweileen@gmail.com",
+    "root": "/home/weison/2024Fall/machine_learning/homework",
+    "host": "weison",
+    "username": "weison",
+    "executable": "/home/weison/anaconda3/envs/ml/bin/python3"
+}

@@ -1,0 +1,44 @@
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Current SDK version is 0.18.3
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Configure stats pid to 167273
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Loading settings from /home/weison/.config/wandb/settings
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Loading settings from /home/weison/2024Fall/machine_learning/homework/hw3/wandb/settings
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-10-15 00:49:29,746 WARNING MainThread:167273 [wandb_setup.py:_flush():79] Could not find program at -m scripts.train
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m scripts.train'}
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:_log_setup():532] Logging user logs to /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_004929-yah3fglh/logs/debug.log
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:_log_setup():533] Logging internal logs to /home/weison/2024Fall/machine_learning/homework/hw3/wandb/run-20241015_004929-yah3fglh/logs/debug-internal.log
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:init():617] calling init triggers
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:init():624] wandb.init called with sweep_config: {}
+config: {'_metadata': ContainerMetadata(ref_type=typing.Any, object_type=<class 'dict'>, optional=True, key=None, flags={'struct': True}, flags_root=False, resolver_cache=defaultdict(<class 'dict'>, {'now': {('%Y-%m-%d',): '2024-10-15', ('%H-%M-%S',): '00-49-28'}}), key_type=typing.Any, element_type=typing.Any), '_parent': None, '_flags_cache': {'struct': True}, '_content': {'dataset_path': './data/wine.data', 'wandb_on_off': True, 'lr': 0.001, 'epoches': 5000, 'tol': 1e-05, 'wandb': {'project': 'hw3', 'dir': './outputs'}}}
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:init():667] starting backend
+2024-10-15 00:49:29,746 INFO    MainThread:167273 [wandb_init.py:init():671] sending inform_init request
+2024-10-15 00:49:29,747 INFO    MainThread:167273 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-10-15 00:49:29,747 INFO    MainThread:167273 [wandb_init.py:init():684] backend started and connected
+2024-10-15 00:49:29,748 ERROR   MainThread:167273 [wandb_init.py:init():1262] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 1252, in init
+    return wi.init()
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 689, in init
+    run = Run(
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 601, in __init__
+    self._init(
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_run.py", line 721, in _init
+    self._config._update(config, ignore_locked=True)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_config.py", line 180, in _update
+    sanitized = self._sanitize_dict(
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_config.py", line 267, in _sanitize_dict
+    k, v = self._sanitize(k, v, allow_val_change)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/wandb_config.py", line 285, in _sanitize
+    val = json_friendly_val(val)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/util.py", line 674, in json_friendly_val
+    converted = asdict(val)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/dataclasses.py", line 1073, in asdict
+    return _asdict_inner(obj, dict_factory)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/dataclasses.py", line 1080, in _asdict_inner
+    value = _asdict_inner(getattr(obj, f.name), dict_factory)
+  File "/home/weison/anaconda3/envs/ml/lib/python3.8/dataclasses.py", line 1110, in _asdict_inner
+    return type(obj)((_asdict_inner(k, dict_factory),
+TypeError: first argument must be callable or None
+2024-10-15 00:49:30,584 WARNING MsgRouterThr:167273 [router.py:message_loop():77] message_loop has been closed
