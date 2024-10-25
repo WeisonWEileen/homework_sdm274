@@ -1,0 +1,13 @@
+dataset_path: "./data/wine.data"
+wandb_on_off: 1  # 0 for off, 1 for on
+lr: 0.01
+epoches: 9000
+tol: 0.00001
+gd_strategy: "MiniBGD"   # available: "SGD" "MiniBGD"
+mini_batchsize: 10
+
+wandb:
+  project: "hw4"
+  dir: "./outputs"
+
+

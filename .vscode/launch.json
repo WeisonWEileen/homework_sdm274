@@ -6,7 +6,7 @@
             "type": "debugpy",
             "request": "launch",
             "module": "scripts.train",
-            "cwd": "${workspaceFolder}/hw3",
+            "cwd": "${workspaceFolder}/hw4",
             "console": "integratedTerminal",
             "justMyCode": false,
         }

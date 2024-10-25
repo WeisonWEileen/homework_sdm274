@@ -1,5 +1,5 @@
 dataset_path: "./data/wine.data"
-wandb_on_off: true          
+wandb_on_off: false          
 lr: 0.01
 epoches: 9000
 tol: 0.00001

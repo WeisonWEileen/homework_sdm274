@@ -1,6 +1,5 @@
 # copyright Weison Pan 2024
 import numpy as np
-import matplotlib.pyplot as plt
 import hydra
 import wandb
 from omegaconf import DictConfig

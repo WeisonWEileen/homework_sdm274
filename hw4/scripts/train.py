@@ -4,7 +4,7 @@ import hydra
 import wandb
 from omegaconf import DictConfig
 import utils.utils as uts
-from engine.model import Perceptron
+from engine.model import LogReg
 
 
 @hydra.main(version_base="1.3", config_path="../conf", config_name="config")
@@ -19,11 +19,17 @@ def main(cfg: DictConfig):
         print("preprocess dataset ")
     y,x = uts.load_data(dataset_path)
     x_train, x_test, y_train, y_test = uts.split_data(x, y, test_size=0.3, random_state=42)
-    
 
-    model = Perceptron(n_feature=x_train.shape[1], epoches=cfg.epoches, lr=cfg.lr, tol=cfg.tol, wandb=cfg.wandb_on_off, gd_strategy=cfg.gd_strategy)
-    model.SGD_fit(x_train, y_train)
-
+    model = LogReg(
+        n_feature=x_train.shape[1],
+        epoches=cfg.epoches,
+        lr=cfg.lr,
+        tol=cfg.tol,
+        wandb=cfg.wandb_on_off,
+        gd_strategy=cfg.gd_strategy,
+        mini_batchsize=cfg.mini_batchsize,
+    )
+    model.train(x_train, y_train)
     model.evaluate(x_test, y_test)
 
 if __name__ == "__main__":

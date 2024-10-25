@@ -3,7 +3,7 @@
 
 # install dependencies
 ```
-pip install numpy hydra-core matplotlib omegaconf wandb  
+pip install numpy hydra-core omegaconf wandb  
 ```
 # 框架
 ### Finished
