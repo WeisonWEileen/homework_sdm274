@@ -1,14 +1,22 @@
 wandb_on_off: 0  # 0 for off, 1 for on
 lr: 0.01
-epoches: 2000
+lr_list: [0.01, 0.1, 0.001]
+# lr_list: [0.01]
+epoches: 100
 tol: 0.001
 gd_strategy: "MiniBGD"   # available: "SGD" "MiniBGD"
+# gd_strategy: "SGD"   # available: "SGD" "MiniBGD"
 mini_batchsize: 10
-activation: "sigmoid"  # available: "sigmoid" "relu"
-input_size: 1
+activation: "sigmoid"    # available: "sigmoid" "relu"
+units: [1, 10, 1]        # the whole network for the model 
+cla_units: [2, 10 ,1]
+# units_list: [[1, 10, 1],[1,15,1],[1,5,10,1]]  
+cla_units_list: [[2, 10, 1],[2,15,1],[2,5,10,1]]  
+cla_units_list: [[2, 10, 1]]  
+input_size: 1 
 
 wandb:
-  project: "hw4"
+  project: "hw5"
   dir: "./outputs"
 
 
