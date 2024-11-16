@@ -4,7 +4,7 @@
 
 code: https://github.com/WeisonWEileen/homework_sdm274/tree/master/hw5
 
-online report (click to check the latest report I submiit):
+online report (click to check the latest report I submiit):https://github.com/WeisonWEileen/homework_sdm274/blob/master/hw5/report/report.md
 
 you can change the param in ```config.yaml``` to reproduce all the results metioned below.
 

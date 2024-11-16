@@ -1,1 +1,4 @@
-### 文件结构模板
+### reproduce
+```
+python3 -m scripts.train
+```

@@ -3,47 +3,48 @@ import numpy as np
 import hydra
 import wandb
 from omegaconf import DictConfig
-
-from engine.lr_model import LinearRegresssion
-
+from engine.model import KNN
+from utils.utils import *
+import matplotlib.pyplot as plt
 
 
 @hydra.main(version_base="1.3", config_path="../conf", config_name="config")
 def main(cfg: DictConfig):
-    # generate some data
-    X_train = np.arange(100).reshape(100,1)
-    a, b = 1, 10
-    y_train = a * X_train + b + np.random.normal(0, 5, size=X_train.shape)
-    y_train = y_train.reshape(-1,1)
+    X, y = read_data(cfg.dataset_path)
+    X_train, X_test, y_train, y_test = split_data(X, y)
 
-    lr = cfg.learning_rate
-    bs = cfg.batch_size
-    ep = cfg.epoches
-    tol = cfg.tolerance
-    gd_s = cfg.gd_strategy
-    pre_s = cfg.prepro_strategy
-    wandb_on_off = cfg.wandb_on_off
+    print(" from 1 to 10")
 
-    if wandb_on_off:
-        wandb.init(project=cfg.wandb.project,dir=cfg.wandb.dir,config=cfg)
-    model = LinearRegresssion(n_feature=X_train.shape[1], learning_rate=lr, batch_size=bs, epoches=ep,tolerance=tol,gd_strategy=gd_s,prepro_strategy=pre_s,wandb=wandb_on_off)
+    Accuracy = [] 
+    Recall = [] 
+    Precision = [] 
+    F1s = []
+    for i in range(10):
+        print(f"K = {i+1}")
+        knn = KNN(i+1)
+
+        knn.fit(X_train, y_train)
+
+        y_pred = knn.predict(X_test)
+        accuracy, recall, precision, F1 = evaluate(y_pred, y_test)
+        Accuracy.append(accuracy)
+        Recall.append(recall)
+        Precision.append(precision)
+        F1s.append(F1)
     
-    X_train = model.preprocess(X_train)
-    plt.scatter(X_train[:, 0], y_train, color='blue', label='Training data')
-    w = model.fit(X_train, y_train)
-    if wandb_on_off:
-        wandb.finish()
+    k_values = list(range(1, 11))
 
-    x_values = np.linspace(X_train[:, 0].min(), X_train[:, 0].max(), 100)
-    y_values = w[0] * x_values + w[1]
-
-    plt.plot(x_values, y_values, color='red', label='Regression line')
-    plt.xlabel('X_train')
-    plt.ylabel('y_train')
+    plt.figure(figsize=(12, 8))
+    plt.plot(k_values, Accuracy, label='Accuracy', marker='o')
+    plt.plot(k_values, Recall, label='Recall', marker='o')
+    plt.plot(k_values, Precision, label='Precision', marker='o')
+    plt.plot(k_values, F1s, label='F1 Score', marker='o')
+    plt.title('Evaluation Metrics for k-NN with Different k Values')
+    plt.xlabel('k')
+    plt.ylabel('Score')
     plt.legend()
-    plt.title('Linear Regression Fit')
+    plt.grid(True)
     plt.show()
-
 
 if __name__ == "__main__":
     main()

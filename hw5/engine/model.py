@@ -131,3 +131,5 @@ class MLP:
         print(
             f"evaluation results: accuracy: {accuracy}, recall: {recall}, precision: {precision}, F1: {F1}"
         )
+
+        return accuracy, recall, precision, F1

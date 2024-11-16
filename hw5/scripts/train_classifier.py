@@ -31,8 +31,8 @@ def main(cfg: DictConfig):
         X, y, test_size=0.2, random_state=42
     )
     kf = KFold(n_splits=5)
-    best_mse = float("inf")
-    best_params = None
+    # best_mse = float("inf")
+    # best_params = None
 
     for units in cfg.cla_units_list:
         for lr in cfg.lr_list:
@@ -55,6 +55,9 @@ def main(cfg: DictConfig):
             model.evaluate(x_test, y_test)
             avg_mse = np.mean(mse_list)
             print(f"Units: {units}, LR: {lr}, Avg MSE: {avg_mse}")
+
+    # @TODO : plot decision the best boundary, not i plot the last
+    # @TODO : change the lost function to cross entropy
     plot_decision_boundary(model, X, y, title="Decision Boundary")
 
 
