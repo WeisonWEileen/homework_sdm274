@@ -36,9 +36,8 @@ def main(cfg: DictConfig):
         lr=cfg.lr,
         mini_batchsize=mini_batchsize,
     )
-
+    
     visualize_fitting_line(x_train, y_train, x_eval, y_eval, model)
-
     # model.evaluate(x_test, y_test)
 
 if __name__ == "__main__":

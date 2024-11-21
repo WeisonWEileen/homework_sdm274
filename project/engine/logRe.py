@@ -1,6 +1,5 @@
 import numpy as np
-import wandb
-
+import matplotlib.pyplot as plt
 
 class LogReg:
     def __init__(self, n_feature=1, epoches=200, lr=0.01, tol=0.01, wandb=False, gd_strategy="SGD", mini_batchsize=100):
@@ -13,6 +12,7 @@ class LogReg:
         self.wandb = wandb
         self.gd_strategy = gd_strategy
         self.mini_batchsize = mini_batchsize
+        self.losses = []
 
     def _preprocess_data(self, input):
         row, col = input.shape
@@ -44,25 +44,14 @@ class LogReg:
         return grad
 
     def train(self, input, groundtruth):
-        ep_no_impro_count = 0
         input = self._preprocess_data(input)
         for epoch in range(self.epoches):
             y_pred = self._feed_forward(input)
             loss = self._loss(y_pred, groundtruth)
-            if epoch % 100 == 0:
+            if epoch % 50 == 0:
                 print(f"epoch: {epoch}, loss: {loss}")
-            if self.wandb:
-                wandb.log({"loss": loss})
-            if (loss - self.best_loss) < - self.tol:
-                self.best_loss = loss
-                ep_no_impro_count = 0
-            elif np.abs(loss - self.best_loss) < self.tol:
-                ep_no_impro_count += 1
-                if ep_no_impro_count >= self.patience:
-                    print(f"early stopping at epoch {epoch}")
-                    break
-            else:
-                ep_no_impro_count = 0
+            self.losses.append(loss)
+
 
             if self.gd_strategy == "SGD":
                 i = np.random.randint(0, len(input))
@@ -78,7 +67,7 @@ class LogReg:
                 self.W = self.W - self.lr * grad
 
     # get accuracy recall precision and F1 score
-    def evaluate(self, input, groundtruth):
+    def evaluate(self, input, groundtruth, threshold=0.5):
         TP = 0
         FP = 0
         FN = 0
@@ -86,16 +75,17 @@ class LogReg:
         input = self._preprocess_data(input)
         for i in range(len(input)):
             y = self._feed_forward(input[i])
-            if y >= 0.5 and groundtruth[i] == 1:
+            if y >= threshold and groundtruth[i] == 1:
                 TP += 1
-            elif y >= 0.5 and groundtruth[i] == 0:
+            elif y >= threshold and groundtruth[i] == 0:
                 FP += 1
-            elif y < 0.5 and groundtruth[i] == 1:
+            elif y < threshold and groundtruth[i] == 1:
                 FN += 1
-            elif y < 0.5 and groundtruth[i] == 0:
+            elif y < threshold and groundtruth[i] == 0:
                 TN += 1
             else:
                 print(f"error: y: {y[0][0]}, groundtruth: {groundtruth[i][0]}")
+        print(f"total cases num(y=0): {len(groundtruth[groundtruth==0])}, num(y=1): {len(groundtruth[groundtruth==1])}")
         print(f"all cases: {input.shape[0]}, TP: {TP}, FP: {FP}, FN: {FN}, TN: {TN}")
         
         accuracy = (TP + TN) / (TP + FP + FN + TN)
@@ -103,15 +93,46 @@ class LogReg:
         precision = TP / (TP + FP)
         F1 = 2 * precision * recall / (precision + recall)
 
-        if self.wandb:
-            wandb.log(
-                {
-                    "accuracy": accuracy,
-                    "recall": recall,
-                    "precision": precision,
-                    "F1": F1,
-                }
-            )        
         print(
             f"evaluation results: accuracy: {accuracy}, recall: {recall}, precision: {precision}, F1: {F1}"
         )
+
+
+    def evaluate_pr(self, input, groundtruth, thresholds=np.arange(0.0, 1.1, 0.1)):
+        precisions = []
+        recalls = []
+        input = self._preprocess_data(input)
+        for threshold in thresholds:
+            TP = 0
+            FP = 0
+            FN = 0
+            TN = 0
+            for i in range(len(input)):
+                y = self._feed_forward(input[i])
+                if y >= threshold and groundtruth[i] == 1:
+                    TP += 1
+                elif y >= threshold and groundtruth[i] == 0:
+                    FP += 1
+                elif y < threshold and groundtruth[i] == 1:
+                    FN += 1
+                elif y < threshold and groundtruth[i] == 0:
+                    TN += 1
+                else:
+                    print(f"error: y: {y[0][0]}, groundtruth: {groundtruth[i][0]}")
+            
+            precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+            recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+            
+            precisions.append(precision)
+            recalls.append(recall)
+            
+            print(f"Threshold: {threshold}, TP: {TP}, FP: {FP}, FN: {FN}, TN: {TN}")
+            print(f"Precision: {precision}, Recall: {recall}")
+        
+        plt.figure(figsize=(10, 6))
+        plt.plot(recalls, precisions, marker='o')
+        plt.xlabel('Recall')
+        plt.ylabel('Precision')
+        plt.title('Precision-Recall Curve')
+        plt.grid(True)
+        plt.show()

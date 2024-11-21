@@ -3,7 +3,7 @@ import numpy as np
 import hydra
 import wandb
 from omegaconf import DictConfig
-
+import matplotlib.pyplot as plt
 from engine.lr_model import LinearRegresssion
 
 

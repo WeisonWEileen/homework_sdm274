@@ -5,7 +5,7 @@ class LinearRegresssion:
     def __init__(
         self,
         n_feature=1,
-        learning_rate=0.0001,
+        learning_rate=0.001,
         batch_size=10,
         epoches=10000,
         tolerance=1e-5,
@@ -32,7 +32,7 @@ class LinearRegresssion:
             raise ValueError(f"Unknown gradient descent strategy: {self.gd_strategy}")
 
         if self.prepro_strategy == "min_max":
-            self.preprocess = self._normalization
+            self.preprocess = self.normalization
         elif self.prepro_strategy == "mean":
             self.preprocess = self._standardization
         elif self.prepro_strategy == "none":
@@ -78,7 +78,7 @@ class LinearRegresssion:
         grad = grad.reshape(self.W.shape)
         return grad
 
-    def _normalization(self, x):
+    def normalization(self, x):
         _min = np.min(x, axis=0)
         _range = np.max(x, axis=0) - _min
         x_norm = (x - _min) / _range
@@ -102,5 +102,4 @@ class LinearRegresssion:
                 if self.wandb:
                     wandb.log({"loss": loss})
                 print(f"for {i} iteration, the loss is {loss}")
-
         return self.W

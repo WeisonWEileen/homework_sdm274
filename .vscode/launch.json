@@ -5,10 +5,25 @@
             "name": "Python: debug",
             "type": "debugpy",
             "request": "launch",
-            "module": "scripts.train",
-            "cwd": "${workspaceFolder}/hw6",
+            // "module": "main",
+            "program": "main.py",
+            "cwd": "${workspaceFolder}/project",
             "console": "integratedTerminal",
             "justMyCode": false,
         }
     ]
 }
+
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python: main.py",
+//             "type": "debugpy",
+//             "request": "launch",
+//             "program": "${workspaceFolder}/project/main.py",
+//             "console": "integratedTerminal",
+//             "justMyCode": false
+//         }
+//     ]
+// }
