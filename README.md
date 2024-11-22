@@ -13,5 +13,6 @@ pip install numpy hydra-core omegaconf wandb
 - wandb loss 可视化loss, 配置 gradient 和 loss 的可视化的接口
 - 参考老师课件改善 mlp
 - 对照 pytorch 的写法。对比一下。
-- 样本太多了？ bce loss 在
+- 样本太多了？ bce loss 在pj1的mpl一下子变成 none 了
 - 样本的不均的问题，看看可不可以使用 [focal loss](https://www.notion.so/SDM-274-11103fe86de580849b2cef37ef887f7b) 来制约一下？
+- 完成 ComputationalGraph 参考 pytorch

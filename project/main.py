@@ -34,19 +34,19 @@ def main(cfg: DictConfig):
     # ====================Linear Regression=========
 
     ## =================LogReg================
-    # model_log = LogReg(
-    #     n_feature=X_train.shape[1],
-    #     epoches=6000,
-    #     lr=0.01,
-    #     tol=1e-5,
-    #     wandb=False,
-    #     gd_strategy="MiniBGD",
-    #     mini_batchsize=10,
-    # )
+    model_log = LogReg(
+        n_feature=X_train.shape[1],
+        epoches=6000,
+        lr=0.01,
+        tol=1e-5,
+        wandb=False,
+        gd_strategy="MiniBGD",
+        mini_batchsize=10,
+    )
 
-    # model_log.train(min_max_normalization(X_train), y_train)
-    # model_log.evaluate(min_max_normalization(X_test), y_test, 0.08)
-    # plot_loss_curve(model_log.losses, "Logestic Regression")
+    model_log.train(min_max_normalization(X_train), y_train)
+    model_log.evaluate(min_max_normalization(X_test), y_test, 0.08)
+    plot_loss_curve(model_log.losses, "Logestic Regression")
     ## =================LogReg==================
 
     ## =================Perceptron=================
