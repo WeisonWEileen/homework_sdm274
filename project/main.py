@@ -65,16 +65,17 @@ def main(cfg: DictConfig):
     ## =================Perceptron==================
 
     ## ==============MLP==================
+    sample_indices = np.random.choice(X_train.shape[0], 3000, replace=False)
     model_mlp = MLP(units=[3,10,1])
     model_mlp.train(
-        min_max_normalization(X_train),
-        y_train,
-        epoches=3000,
-        lr=0.01,
+        min_max_normalization(X_train[sample_indices]),
+        y_train[sample_indices],
+        epoches=2000,
+        lr=0.001,
         mini_batchsize=50,
     )
     plot_loss_curve(model_mlp.losses, "MLP")
-    model_mlp.evaluate_pr(min_max_normalization(X_test), y_test, np.arange(0.05, 0.25, 0.01))
+    model_mlp.evaluate_pr(min_max_normalization(X_test), y_test, np.arange(0.05, 0.8, 0.01))
 
     # model_mlp.evaluate(min_max_normalization(X_test), y_test)
     ## ==============MLP=================

@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 """
 numpy实现的 mlp 类。input: number of layers 和 units per layer (一个 list)
+将每个operator 性质的东西解耦合，方向传播才会更加方便
 """
 
 class MLP:
@@ -50,6 +51,10 @@ class MLP:
 
     def _mse_loss(self, y_pred, y):
         return np.mean((y_pred - y) ** 2)
+    
+    def _bce_loss(self, y_pred, y):
+        epsilon = 1e-5
+        return - np.mean(y * np.log(y_pred + epsilon) + (1 - y) * np.log(1 - y_pred + epsilon))
 
     # deltas 是指上一层对输出求偏导的结果
     '''
@@ -59,13 +64,15 @@ class MLP:
         batch_size = y.shape[0]
         self.deltas = []
         self.deltas.append(self.a[-1] - y)
+        # grad_downstream = (self.a[-1] - y) / (1e-5 + self.a[-1]*(1 - self.a[-1]))
+        # self.deltas.append(grad_downstream)
+
         for i in range(len(self.a) - 2, 0, -1):
             delta = np.dot(self.deltas[-1], self.weights[i].T) * self._d_sigmoid(self.a[i])
             self.deltas.append(delta)
         self.deltas.reverse()
         for i in range(len(self.weights)):
             self.weights[i] -= lr * np.dot(self.a[i].T, self.deltas[i]) / batch_size
-
             self.biases[i] -= lr * np.sum(self.deltas[i], axis=0, keepdims=True) / batch_size
 
     def train(self, input, groundtruth, epoches=1000, lr=0.01, mini_batchsize=10, gd_strategy="MiniBGD"):
@@ -87,10 +94,11 @@ class MLP:
                 self.forward(X_batch)
                 self._backward(y_batch, lr)
             loss = self._mse_loss(self.forward(input), groundtruth)
+            # loss = self._bce_loss(self.forward(input), groundtruth)
             self.losses.append(loss)
-            if epoch % 200 == 0:
+            # if epoch % 200 == 0:
                 # print(self.weights[3])
-                print(f'Epoch {epoch}, Loss: {loss}')
+            print(f'Epoch {epoch}, Loss: {loss}')
 
     # get accuracy recall precision and F1 score
     def evaluate(self, input, groundtruth):
@@ -126,7 +134,7 @@ class MLP:
         return accuracy, recall, precision, F1
 
 
-    def evaluate_pr(self, input, groundtruth, thresholds=np.arange(0.2, 0.8, 0.04)):
+    def evaluate_pr(self, input, groundtruth, thresholds=np.arange(0.01, 0.8, 0.01)):
         precisions = []
         recalls = []
         for threshold in thresholds:
@@ -149,7 +157,7 @@ class MLP:
             
             precision = TP / (TP + FP) if (TP + FP) > 0 else 0
             recall = TP / (TP + FN) if (TP + FN) > 0 else 0
-            F1 = 2 * precision * recall / (precision + recall)
+            F1 = 2 * precision * recall / (precision + recall + 1e-5)
             accuracy = (TP + TN) / (TP + FP + FN + TN)
             precisions.append(precision)
             recalls.append(recall)
