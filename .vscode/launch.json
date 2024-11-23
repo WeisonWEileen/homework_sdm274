@@ -6,8 +6,8 @@
             "type": "debugpy",
             "request": "launch",
             // "module": "main",
-            "program": "main.py",
-            "cwd": "${workspaceFolder}/project",
+            "program": "Tensor_array.py",
+            "cwd": "${workspaceFolder}/hw8",
             "console": "integratedTerminal",
             "justMyCode": false,
         }
