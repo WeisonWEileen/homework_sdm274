@@ -1,6 +1,6 @@
 train_set_path: "data/optdigits.tra"
 test_set_path: "data/optdigits.tes"
 batch_size: 50
-epoches: 1000
+epoches: 2000
 units: [64, 20, 10]
 lr: 0.01

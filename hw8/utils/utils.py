@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 
 def read_mnist_data(file_path):
     data = []
@@ -35,6 +36,12 @@ def read_mnist_data(file_path):
         
     return np.array(data), np.array(labels)
 
+def one_hot_precision(y, y_hat):
+    y = np.argmax(y, axis=1)
+    y_hat = np.argmax(y_hat, axis=1)
+    return np.mean(y == y_hat)
+
+
 def get_hyperparam(cfg):
     print(" ")
     print("Train set path:", cfg.train_set_path)
@@ -45,6 +52,21 @@ def get_hyperparam(cfg):
     print("Learning rate:", cfg.lr)
     print(" ")
     return cfg.train_set_path, cfg.test_set_path, cfg.units, cfg.batch_size, cfg.epoches, cfg.lr
+
+
+def plot_loss_curve(loss,  name):
+    epochs = range(1, len(loss) + 1)
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, loss, label='Loss', marker='o')
+    plt.title(name)
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# one hot precision
+
 
 if __name__ == '__main__':
     # 示例用法

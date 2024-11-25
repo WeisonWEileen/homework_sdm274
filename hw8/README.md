@@ -11,3 +11,9 @@ autograd 机制能够完美的将神经网络中的算子的 Module 性质结合
 - 提供打印 computation graph 的接口
 - 构建拓扑关系
 - 加上权重 penalty
+
+###  实现的细节
+
+注意，这么写是错的，应该是使用下一级的值，而不是 self.data（这只是 z）
+
+![image-20241125212238032](./assets/image-20241125212238032.png)

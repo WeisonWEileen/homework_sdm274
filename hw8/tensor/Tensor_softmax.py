@@ -73,20 +73,22 @@ class Tensor():
         '''
         def grad_fn(grad):
             return 1 / self.data.shape[0] * np.ones_like(self.data) * grad
+        
         new = Tensor(self.data.sum() / self.data.shape[0], depend=[(self, grad_fn)])
         new.name = "average of " + self.name
         return new  
     
-    def sigmoid(self):
-        """
-        y = 1 / (1 + exp(-x))
-        """
-        def grad_fn(grad):
-            return grad * self.data * (1 - self.data)
-        a = 1 / (1 + np.exp(-self.data))
-        new = Tensor(a, depend=[(self, grad_fn)])
-        new.name = "sigmoid of " + self.name
-        return new
+    # 这是还没改过来，不能使用self.data
+    # def sigmoid(self):
+    #     """
+    #     y = 1 / (1 + exp(-x))
+    #     """
+    #     def grad_fn(grad):
+    #         return grad * self.data * (1 - self.data)
+    #     a = 1 / (1 + np.exp(-self.data))
+    #     new = Tensor(a, depend=[(self, grad_fn)])
+    #     new.name = "sigmoid of " + self.name
+    #     return new
     
     def relu(self):
         """
@@ -103,11 +105,10 @@ class Tensor():
         """
         y = exp(x) / sum(exp(x))
         """
-        def grad_fn(grad):
-            return grad * self.data * (1 - self.data)
-        
-        # a = np.exp(self.data) / np.exp(self.data).sum()
         a = np.exp(self.data) / np.sum(np.exp(self.data), axis=1, keepdims=True)
+
+        def grad_fn(grad):
+            return grad * a * (1 - a)
 
         new = Tensor(a, depend=[(self, grad_fn)])
         new.name = "softmax of " + self.name
@@ -116,16 +117,16 @@ class Tensor():
     def cross_entropy_loss(self, groundtruth):
         """
         Cross-Entropy Loss
-        loss = -sum(y * log(p))
+        loss = - sum(y * log(p))
         """
         def grad_fn(grad):
             return grad * (self.data - groundtruth.data)
-        
         epsilon = 1e-12  # 防止 log(0)
-        predictions_clipped = np.clip(self.data, epsilon, 1 - epsilon)
-        loss_data = -np.sum(groundtruth.data * np.log(predictions_clipped), axis=1)
+        predictions_clipped = np.clip(self.data, epsilon, 1)
+        loss_data = - np.sum(groundtruth.data * np.log(predictions_clipped), axis=1)
         loss = Tensor(loss_data.mean(), depend=[(self, grad_fn)])
         loss.name = "cross_entropy_loss"
+        
         return loss
 
     def bce_loss(predictions, groundtruth):
@@ -145,12 +146,11 @@ class Tensor():
         return loss
     
     def backward(self, grad=None):
-        # print("back in", self.name)
         if grad is None:
             self.grad = 1
             grad = 1
         else:
-            # 多个连接点的叠加
+            # 多个node点的叠加
             self.grad += grad
         for tensor, grad_fn in self.depend:
             bw = grad_fn(grad)
@@ -173,14 +173,6 @@ class Linear():
 
 def fun(x):
     return 2*x + 1
-
-
-
-
-
-
-
-
 
 
 
