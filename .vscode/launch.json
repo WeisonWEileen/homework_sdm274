@@ -6,7 +6,7 @@
             "type": "debugpy",
             "request": "launch",
             // "module": "main",
-            "program": "Tensor_array.py",
+            "program": "main.py",
             "cwd": "${workspaceFolder}/hw8",
             "console": "integratedTerminal",
             "justMyCode": false,
